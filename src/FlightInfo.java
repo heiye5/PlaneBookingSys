@@ -1,10 +1,13 @@
 import java.util.Date;
 
+/**
+ * 航班信息
+ */
 public class FlightInfo {
     private String id;
-    private String departureCity;
-    private String arriveCity;
-    private Date departureDate;
+    private String departureCity;       //出发城市
+    private String arriveCity;          //到达城市
+    private Date departureDate;         //出发时间
 
     public String getId() {
         return id;

@@ -1,11 +1,11 @@
-/*
-乘客信息
+/**
+ * 乘客信息
  */
 public class Customer {
     private String id;
-    private String customerName;
-    private String customerNumber;
-    private String customerCardId;
+    private String customerName;            //乘机人姓名
+    private String customerNumber;          //乘机人电话
+    private String customerCardId;          //乘机人身份证
 
     public String getId() {
         return id;

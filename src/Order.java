@@ -1,11 +1,15 @@
+/**
+ * 订单信息
+ */
+
 public class Order {
     private String id;
-    private float cusomerType;
-    private float airportTax;
-    private float fuel;
-    private float generalInsurance;
-    private float modifyInsurance;
-    private float coupon;
+    private float customerType;         //乘机人类型
+    private float airportTax;           //机场税
+    private float fuel;                 //燃油费
+    private float generalInsurance;     //航空综合险
+    private float modifyInsurance;      //机票退改险
+    private float coupon;               //优惠券
     private Customer customer[];
 
     public String getId() {
@@ -16,12 +20,12 @@ public class Order {
         this.id = id;
     }
 
-    public float getCusomerType() {
-        return cusomerType;
+    public float getCustomerType() {
+        return customerType;
     }
 
-    public void setCusomerType(float cusomerType) {
-        this.cusomerType = cusomerType;
+    public void setCustomerType(float customerType) {
+        this.customerType = customerType;
     }
 
     public float getAirportTax() {

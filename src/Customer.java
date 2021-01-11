@@ -1,3 +1,6 @@
+/*
+乘客信息
+ */
 public class Customer {
     private String id;
     private String customerName;

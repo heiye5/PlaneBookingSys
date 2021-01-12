@@ -8,6 +8,7 @@ public class Customer {
     private String customerName;            //乘机人姓名
     private String customerNumber;          //乘机人电话
     private String customerCardId;          //乘机人身份证
+    private String birthday;
 
     public String getId() {
         return id;

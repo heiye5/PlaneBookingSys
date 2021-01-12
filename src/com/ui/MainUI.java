@@ -27,7 +27,7 @@ public class MainUI {
             if(result.equals("1")){
                 String id = UUID.randomUUID().toString();
 //                System.out.println(id.replace("-",""));
-                String newId = id.replace("-","");
+                String newId = id.replace("-","");                  //删去"-"
 
                 System.out.print("请输入航班编号：");
                 String flightId = scanner.next();
@@ -62,9 +62,9 @@ public class MainUI {
                 return;
             }else{
                 System.out.print("\n");
-                System.out.println("***********************************************");
-                System.out.println("*   非法字符，请输入纯数字（1，2,3,4,5，6）！！!  *");
-                System.out.println("***********************************************");
+                System.out.println("************************************************************");
+                System.out.println("*   ！！！非法字符，请输入纯数字（1，2,3,4,5，6）中的一个！！!  *");
+                System.out.println("************************************************************");
                 System.out.print("\n");
             }
         }

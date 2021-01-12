@@ -8,7 +8,7 @@ import java.util.Set;
 public class PlanDaoImpl implements IFlightDao {
     @Override
     public void insertFlight(FlightInfo flightInfo) {
-        System.out.println(flightInfo);
+
     }
 
     @Override

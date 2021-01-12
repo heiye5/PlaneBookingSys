@@ -16,6 +16,7 @@ public class Order {
     private float coupon;               //优惠券
     private Set<Customer> customer;
 
+
     public String getId() {
         return id;
     }

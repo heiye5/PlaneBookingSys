@@ -38,8 +38,6 @@ public class FlightInfo {
         this.departureCity = departureCity;
         this.arriveCity = arriveCity;
         this.departureDate = departureDate;
-
-
     }
 
     public String getId() {
@@ -94,4 +92,5 @@ public class FlightInfo {
                 ", departureDate=" + departureDate +
                 '}';
     }
+
 }

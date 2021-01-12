@@ -16,6 +16,11 @@ public class MainUI {
             System.out.println("请输入相应的数字选择：");
 
             System.out.println("1.录入航班信息");
+            System.out.println("2.显示所有航班信息");
+            System.out.println("3.查询航班信息");
+            System.out.println("4.机票预订");
+            System.out.println("5.机票退订");
+            System.out.println("6.退出系统");
 
             int result = scanner.nextInt();
 
@@ -43,6 +48,8 @@ public class MainUI {
 
                 iFlightService.insertFlight(flightInfo);
 
+            }else if(result == 6){
+                return;
             }
 
         }

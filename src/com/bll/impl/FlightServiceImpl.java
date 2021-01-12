@@ -6,6 +6,7 @@ import com.bll.IFlightService;
 import java.util.Set;
 
 public class FlightServiceImpl implements IFlightService {
+
     @Override
     public void insertFlight(FlightInfo flightInfo) {
         System.out.println(flightInfo);
@@ -36,3 +37,4 @@ public class FlightServiceImpl implements IFlightService {
 
     }
 }
+

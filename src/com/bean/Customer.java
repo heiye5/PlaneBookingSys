@@ -1,3 +1,5 @@
+package com.bean;
+
 /**
  * 乘客信息
  */
@@ -38,4 +40,5 @@ public class Customer {
     public void setCustomerCardId(String customerCardId) {
         this.customerCardId = customerCardId;
     }
+
 }

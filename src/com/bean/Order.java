@@ -1,3 +1,5 @@
+package com.bean;
+
 import java.util.List;
 
 /**

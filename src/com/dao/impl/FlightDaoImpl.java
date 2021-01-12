@@ -2,13 +2,12 @@ package com.dao.impl;
 
 import com.bean.FlightInfo;
 import com.dao.IFlightDao;
-
 import java.util.Set;
 
-public class PlanDaoImpl implements IFlightDao {
+public class FlightDaoImpl implements IFlightDao {
     @Override
     public void insertFlight(FlightInfo flightInfo) {
-
+        System.out.println("DAO层 = " + flightInfo);
     }
 
     @Override

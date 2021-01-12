@@ -1,7 +1,6 @@
 package com.dao;
 
 import com.bean.FlightInfo;
-
 import java.util.Set;
 
 public interface IFlightDao {

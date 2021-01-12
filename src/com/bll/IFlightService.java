@@ -1,10 +1,10 @@
-package com.dao;
+package com.bll;
 
 import com.bean.FlightInfo;
 
 import java.util.Set;
 
-public interface IPlanDao {
+public interface IFlightService {
     void insertFlight(FlightInfo flightInfo);
     Set<FlightInfo> getAllFlight();
     FlightInfo getFlightByDepartureCity(String departureCity);

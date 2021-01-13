@@ -7,9 +7,11 @@ import com.bll.impl.FlightServiceImpl;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainUI {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 //        String test = scanner.next();
 //        System.out.println(test);
@@ -28,7 +30,7 @@ public class MainUI {
             if(result.equals("1")){
                 String id = UUID.randomUUID().toString();
 //                System.out.println(id.replace("-",""));
-                String newId = id.replace("-","");                  //删去"-"
+                String newId = id.replace("-","")+"dsfgbhd";                  //删去"-"
 
                 System.out.print("请输入航班编号：");
                 String flightId = scanner.next();
@@ -48,8 +50,32 @@ public class MainUI {
 
                 System.out.println("正在录入数据...");
 
-                iFlightService.insertFlight(flightInfo);
+                try {
+                    iFlightService.insertFlight(flightInfo);
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                    String messageStr = e.getMessage();
+                    String newMessage = messageStr.substring(0,9);
+                    if(newMessage.equals("ORA-12899")){
+                         //按指定模式在字符串查找
+                        String pattern = "(\\w+-\\d{5}):(\\s\\w+)+\\s(\"\\w+\")\\.(\"\\w+\")\\.(\"\\w+\")";
+//                        String pattern = "(\\w+-\\d{5}):([\\u4e00-\\u9fa5])";
+                        // 创建 Pattern 对象
+                        Pattern r = Pattern.compile(pattern);
+                        // 现在创建 matcher 对象
+                        Matcher m = r.matcher(messageStr);
+                        if (m.find()) {
+//                            System.out.println(m.group(0));
+//                            System.out.println(m.group(1));
+                            String tableName = m.group(4);
+                            String columnName = m.group(5);
+                            System.out.println(tableName + "表的" + columnName + "这一列的值过大，请仔细检查");
+                        } else {
+                            System.out.println("NO MATCH");
+                        }
+                    }
 
+                }
 
 
                 System.out.println("\n");

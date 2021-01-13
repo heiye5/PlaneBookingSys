@@ -1,4 +1,6 @@
-import java.util.List;
+package com.bean;
+
+import java.util.Set;
 
 /**
  * 订单信息
@@ -12,7 +14,8 @@ public class Order {
     private float generalInsurance;     //航空综合险
     private float modifyInsurance;      //机票退改险
     private float coupon;               //优惠券
-    private List<Customer> customer;
+    private Set<Customer> customer;
+
 
     public String getId() {
         return id;
@@ -70,11 +73,11 @@ public class Order {
         this.coupon = coupon;
     }
 
-    public List<Customer> getCustomer() {
+    public Set<Customer> getCustomer() {
         return customer;
     }
 
-    public void setCustomer(List<Customer> customer) {
+    public void setCustomer(Set<Customer> customer) {
         this.customer = customer;
     }
 }

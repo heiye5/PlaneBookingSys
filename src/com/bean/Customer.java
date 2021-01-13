@@ -1,3 +1,5 @@
+package com.bean;
+
 /**
  * 乘客信息
  */
@@ -6,6 +8,7 @@ public class Customer {
     private String customerName;            //乘机人姓名
     private String customerNumber;          //乘机人电话
     private String customerCardId;          //乘机人身份证
+    private String birthday;                //生日
 
     public String getId() {
         return id;
@@ -37,5 +40,13 @@ public class Customer {
 
     public void setCustomerCardId(String customerCardId) {
         this.customerCardId = customerCardId;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }

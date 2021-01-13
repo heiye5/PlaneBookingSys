@@ -18,10 +18,10 @@ public class MainUI {
             System.out.println("|   1.录入航班信息（输入数字1）       |");
             System.out.println("|   2.显示所有航班信息（输入数字2）   |");
             System.out.println("|   3.查询航班信息（输入数字3）       |");
-            System.out.println("|   4.机票预订（输入数字4）           |");
-            System.out.println("|   5.机票退订（输入数字5）           |");
-            System.out.println("|   6.退出系统（输入数字6）           |");
-            System.out.println("-------------------------------------");
+            System.out.println("|   4.机票预订（输入数字4）          |");
+            System.out.println("|   5.机票退订（输入数字5）          |");
+            System.out.println("|   6.退出系统（输入数字6）          |");
+            System.out.println("------------------------------------");
 
             System.out.print("请输入相应的数字选择：");
             String result = scanner.next();

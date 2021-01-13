@@ -4,8 +4,8 @@ import com.bean.FlightInfo;
 import com.bll.IFlightService;
 import com.dao.IFlightDao;
 import com.dao.impl.FlightDaoImpl;
-
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.Set;
 
 public class FlightServiceImpl implements IFlightService {
@@ -21,8 +21,10 @@ public class FlightServiceImpl implements IFlightService {
     }
 
     @Override
-    public Set<FlightInfo> getAllFlight() {
-        return null;
+    public Set<FlightInfo> getAllFlight() throws SQLException {
+//        System.out.println("service");
+        Set<FlightInfo> sets = iFlightDao.getAllFlight();
+        return sets;
     }
 
     @Override

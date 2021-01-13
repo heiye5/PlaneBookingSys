@@ -4,11 +4,12 @@ import com.bean.FlightInfo;
 import com.bll.IFlightService;
 import com.bll.impl.FlightServiceImpl;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class MainUI {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
 //        String test = scanner.next();
 //        System.out.println(test);
@@ -45,7 +46,11 @@ public class MainUI {
                 FlightInfo flightInfo = new FlightInfo(newId,flightId,currentSeatsNum,planeType,departureCity,arriveCity,departureDate);
                 IFlightService iFlightService = new FlightServiceImpl();
 
+                System.out.println("正在录入数据...");
+
                 iFlightService.insertFlight(flightInfo);
+
+
 
                 System.out.println("\n");
 

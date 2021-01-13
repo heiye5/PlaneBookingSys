@@ -43,7 +43,7 @@ public class MainUI {
                 System.out.print("起飞时间:");
                 String departureDate = scanner.next();
 
-                FlightInfo flightInfo = new FlightInfo(newId,flightId,currentSeatsNum,planeType,departureCity,arriveCity,departureDate);
+                FlightInfo flightInfo = new FlightInfo(newId,flightId,currentSeatsNum, planeType,departureCity,arriveCity,departureDate);
                 IFlightService iFlightService = new FlightServiceImpl();
 
                 System.out.println("正在录入数据...");

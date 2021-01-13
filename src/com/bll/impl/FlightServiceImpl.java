@@ -4,7 +4,6 @@ import com.bean.FlightInfo;
 import com.bll.IFlightService;
 import com.dao.IFlightDao;
 import com.dao.impl.FlightDaoImpl;
-
 import java.sql.SQLException;
 import java.util.Set;
 

@@ -10,6 +10,6 @@ public interface IFlightService {
     Set<FlightInfo> getAllFlight() throws SQLException;
     FlightInfo getFlightByDepartureCity(String departureCity);
     FlightInfo getFlightByArriveCity(String arriveCity);
-    FlightInfo getFlightByDepartureDate(String departureDate);
+    FlightInfo getFlightByDepartureDate(String departureDate) throws SQLException;
     void updateFlight(FlightInfo flightInfo);
 }

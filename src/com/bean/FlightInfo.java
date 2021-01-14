@@ -30,6 +30,15 @@ public class FlightInfo {
         this.currentSeatsNum = currentSeatsNum;
     }
 
+    public FlightInfo(String flightId, int currentSeatsNum, String planeType, String departureCity, String arriveCity, String departureDate) {
+        this.flightId = flightId;
+        this.currentSeatsNum = currentSeatsNum;
+        this.planeType = planeType;
+        this.departureCity = departureCity;
+        this.arriveCity = arriveCity;
+        this.departureDate = departureDate;
+    }
+
     public FlightInfo(String id, String flightId, int currentSeatsNum, String planeType, String departureCity,
                       String arriveCity, String departureDate) {
         this.id = id;

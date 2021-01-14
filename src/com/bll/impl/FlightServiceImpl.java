@@ -38,8 +38,8 @@ public class FlightServiceImpl implements IFlightService {
     }
 
     @Override
-    public FlightInfo getFlightByDepartureDate(String departureDate) {
-        return null;
+    public FlightInfo getFlightByDepartureDate(String departureDate) throws SQLException {
+        return iFlightDao.getFlightByDepartureDate(departureDate);
     }
 
     @Override

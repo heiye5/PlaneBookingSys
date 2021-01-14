@@ -94,7 +94,28 @@ public class MainUI {
                 }
 
             }else if(result.equals("3")){
-                System.out.println("你选择了3");
+                System.out.println("|   1.起飞时间（输入数字1）   |");
+                System.out.println("|   2.出发城市（输入数字2）   |");
+                System.out.println("|   3.目的城市（输入数字3）   |");
+                System.out.println("|   输入其他任意字符退出系统   |");
+                System.out.print("请选择查找方式：");
+                String search = scanner.next();
+
+                if(search.equals("1")){
+                    IFlightService iFlightService = new FlightServiceImpl();
+                    System.out.print("起飞时间：");
+                    String time = scanner.next();
+                    try {
+                        FlightInfo flightInfo = iFlightService.getFlightByDepartureDate(time);
+                        System.out.println(flightInfo);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    System.out.println("正在退出");
+                    return;
+                }
+
             }else if(result.equals("4")){
                 System.out.println("你选择了4");
             }else if(result.equals("5")){

@@ -59,6 +59,9 @@ public class FlightDaoImpl implements IFlightDao {
 
     @Override
     public FlightInfo getFlightByDepartureCity(String departureCity) {
+
+
+
         return null;
     }
 
@@ -68,8 +71,32 @@ public class FlightDaoImpl implements IFlightDao {
     }
 
     @Override
-    public FlightInfo getFlightByDepartureDate(String departureDate) {
-        return null;
+    public FlightInfo getFlightByDepartureDate(String departureDate) throws SQLException {
+        String url = "jdbc:oracle:thin:dbip:1521:orcl";
+        String userName = "opts";
+        String password = "opts1234";
+        String sql = "select FLIGHT_ID,PLANE_TYPE,TOTAL_SEATS_NUM,DEPARTURE_AIRPORT,DESTINATION_AIRPORT,DEPARTURE_TIME from flight " +
+                "where DEPARTURE_TIME = ?";
+
+        Connection connection = DriverManager.getConnection(url,userName,password);
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1,departureDate);
+        ResultSet rs = ps.executeQuery();
+
+        FlightInfo flightInfo = null;
+
+        while(rs.next()){
+            String flightId = rs.getString("FLIGHT_ID");
+            int currentSeatsNum = rs.getInt("TOTAL_SEATS_NUM");
+            String planeType = rs.getString("PLANE_TYPE");
+            String departureCity = rs.getString("DEPARTURE_AIRPORT");
+            String arriveCity = rs.getString("DESTINATION_AIRPORT");
+            String departureDates = rs.getString("DEPARTURE_TIME");
+
+            flightInfo = new FlightInfo(flightId,currentSeatsNum,planeType,departureCity,arriveCity,departureDates);
+        }
+
+        return flightInfo;
     }
 
     @Override

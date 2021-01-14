@@ -15,11 +15,13 @@ public class FlightServiceImpl implements IFlightService {
         iFlightDao = new FlightDaoImpl();
     }
 
+    //录入航班信息
     @Override
     public void insertFlight(FlightInfo flightInfo) throws SQLException {
         iFlightDao.insertFlight(flightInfo);
     }
 
+    //显示所有航班信息
     @Override
     public Set<FlightInfo> getAllFlight() throws SQLException {
 //        System.out.println("service");
@@ -27,20 +29,26 @@ public class FlightServiceImpl implements IFlightService {
         return sets;
     }
 
-    @Override
-    public FlightInfo getFlightByDepartureCity(String departureCity) {
-        return null;
-    }
 
+    /**
+     * 查询航班信息
+     */
+    //出发城市
     @Override
-    public FlightInfo getFlightByArriveCity(String arriveCity) {
-        return null;
+    public FlightInfo getFlightByDepartureCity(String departureCity) throws SQLException {
+        return iFlightDao.getFlightByDepartureCity(departureCity);
     }
-
+    //目的城市
+    @Override
+    public FlightInfo getFlightByArriveCity(String arriveCity) throws SQLException {
+        return iFlightDao.getFlightByArriveCity(arriveCity);
+    }
+    //起飞时间
     @Override
     public FlightInfo getFlightByDepartureDate(String departureDate) throws SQLException {
         return iFlightDao.getFlightByDepartureDate(departureDate);
     }
+
 
     @Override
     public void updateFlight(FlightInfo flightInfo) {

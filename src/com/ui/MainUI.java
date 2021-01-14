@@ -101,12 +101,30 @@ public class MainUI {
                 System.out.print("请选择查找方式：");
                 String search = scanner.next();
 
+                IFlightService iFlightService = new FlightServiceImpl();
                 if(search.equals("1")){
-                    IFlightService iFlightService = new FlightServiceImpl();
                     System.out.print("起飞时间：");
                     String time = scanner.next();
                     try {
                         FlightInfo flightInfo = iFlightService.getFlightByDepartureDate(time);
+                        System.out.println(flightInfo);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else if(search.equals("2")){
+                    System.out.print("出发机场：");
+                    String time = scanner.next();
+                    try {
+                        FlightInfo flightInfo = iFlightService.getFlightByDepartureCity(time);
+                        System.out.println(flightInfo);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }else if(search.equals("3")){
+                    System.out.print("到达机场：");
+                    String time = scanner.next();
+                    try {
+                        FlightInfo flightInfo = iFlightService.getFlightByArriveCity(time);
                         System.out.println(flightInfo);
                     } catch (SQLException e) {
                         e.printStackTrace();
